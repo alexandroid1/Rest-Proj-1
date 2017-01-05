@@ -38,11 +38,11 @@ public class GreetingController {
                 String.format(template, name));
     }
 
-    @RequestMapping(value= "/{time}", method = RequestMethod.DELETE)
+    @RequestMapping(value= "/{greeting}", method = RequestMethod.DELETE)
     @ResponseBody
     public Greeting greetingDELETE(@RequestParam(value="name", defaultValue="World") String name) {
         return new Greeting(counter.incrementAndGet(),
                 String.format(template, name));
     }
-    
+
 }
