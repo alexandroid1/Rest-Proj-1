@@ -3,6 +3,7 @@ package ua.alexandroid1.alex.config;
 /**
  * Created by Oleksandr on 07.01.2017.
  */
+
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -26,8 +27,7 @@ public class Initializer implements WebApplicationInitializer {
         ctx.setServletContext(servletContext);
 
         // настраиваем маппинг Dispatcher Servlet-а
-        ServletRegistration.Dynamic servlet =
-                servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(ctx));
+        ServletRegistration.Dynamic servlet = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(ctx));
         servlet.addMapping("/");
         servlet.setLoadOnStartup(1);
     }

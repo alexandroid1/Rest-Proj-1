@@ -3,6 +3,7 @@ package ua.alexandroid1.alex.config;
 /**
  * Created by Oleksandr on 07.01.2017.
  */
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
