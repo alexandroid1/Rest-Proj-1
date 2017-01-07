@@ -17,7 +17,7 @@ public class MainController {
     @RequestMapping(value= "/{time}", method = RequestMethod.GET)
     @ResponseBody
     public MyDataObject getMyData(@PathVariable long time) {
-        return new MyDataObject(counter.incrementAndGet(), Calendar.getInstance(), String.format(template, "GET!"));
+        return new MyDataObject(/*counter.incrementAndGet(), */Calendar.getInstance(), String.format(template, "GET!"));
     }
 
     // этот метод будет принимать Объект MyDataObject и отдавать его клиенту
@@ -32,7 +32,7 @@ public class MainController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public MyDataObject postMyData() {
-        return new MyDataObject(counter.incrementAndGet(), Calendar.getInstance(), String.format(template, "POST!"));
+        return new MyDataObject(/*counter.incrementAndGet(), */Calendar.getInstance(), String.format(template, "POST!"));
     }
 
     // этот метод будет принимать время методом DELETE
@@ -40,7 +40,7 @@ public class MainController {
     @RequestMapping(value= "/{time}", method = RequestMethod.DELETE)
     @ResponseBody
     public MyDataObject deleteMyData(@PathVariable long time) {
-        return new MyDataObject(counter.incrementAndGet(), Calendar.getInstance(), String.format(template, "DELETE!"));
+        return new MyDataObject(/*counter.incrementAndGet(), */Calendar.getInstance(), String.format(template, "DELETE!"));
     }
 
 }
