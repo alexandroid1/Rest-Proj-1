@@ -63,3 +63,4 @@ fabric.properties
 build/
 src/main/resources/
 src/test/resources/
+.idea/inspectionProfiles/
