@@ -6,15 +6,18 @@ import java.util.Calendar;
  * Created by Oleksandr on 07.01.2017.
  */
 public class MyDataObject {
+    private final long id;
+
     private Calendar time;
     private String message;
-
-    public MyDataObject(Calendar time, String message) {
+    public MyDataObject(long id, Calendar time, String message) {
+        this.id = id;
         this.time = time;
         this.message = message;
     }
 
-    public MyDataObject() {
+    public long getId() {
+        return id;
     }
 
     public Calendar getTime() {

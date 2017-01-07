@@ -4,13 +4,12 @@ import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.*;
-import ua.alexandroid1.alex.domainModel.Greeting;
 import ua.alexandroid1.alex.domainModel.MyDataObject;
 
 @RestController
 public class MainController {
 
-    private static final String template = "Hello, %s!";
+    private static final String template = "Это ответ метода, %s!";
     private final AtomicLong counter = new AtomicLong();
 
     // этот метод будет принимать время методом GET и на его основе
@@ -18,7 +17,7 @@ public class MainController {
     @RequestMapping(value= "/{time}", method = RequestMethod.GET)
     @ResponseBody
     public MyDataObject getMyData(@PathVariable long time) {
-        return new MyDataObject(Calendar.getInstance(), "Это ответ метода GET!");
+        return new MyDataObject(counter.incrementAndGet(), Calendar.getInstance(), String.format(template, "GET!"));
     }
 
     // этот метод будет принимать Объект MyDataObject и отдавать его клиенту
@@ -33,7 +32,7 @@ public class MainController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public MyDataObject postMyData() {
-        return new MyDataObject(Calendar.getInstance(), "это ответ метода POST!");
+        return new MyDataObject(counter.incrementAndGet(), Calendar.getInstance(), String.format(template, "POST!"));
     }
 
     // этот метод будет принимать время методом DELETE
@@ -41,7 +40,7 @@ public class MainController {
     @RequestMapping(value= "/{time}", method = RequestMethod.DELETE)
     @ResponseBody
     public MyDataObject deleteMyData(@PathVariable long time) {
-        return new MyDataObject(Calendar.getInstance(), "Это ответ метода DELETE!");
+        return new MyDataObject(counter.incrementAndGet(), Calendar.getInstance(), String.format(template, "DELETE!"));
     }
 
 }
