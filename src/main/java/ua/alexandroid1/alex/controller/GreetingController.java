@@ -1,8 +1,9 @@
-package hello;
+package ua.alexandroid1.alex.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.*;
+import ua.alexandroid1.alex.domainModel.Greeting;
 
 @RestController
 public class GreetingController {

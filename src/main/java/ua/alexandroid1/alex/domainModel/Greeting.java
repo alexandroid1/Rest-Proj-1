@@ -1,4 +1,4 @@
-package hello;
+package ua.alexandroid1.alex.domainModel;
 
 public class Greeting {
 
