@@ -19,6 +19,9 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @ComponentScan("ua.alexandroid1.alex")
 public class WebAppConfig {
 
+    // TODO use new spring annotations
+    // TODO JSP with AJAX should be in diff proj module
+
     @Bean
     public UrlBasedViewResolver setupViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();

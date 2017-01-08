@@ -16,6 +16,8 @@ import javax.servlet.ServletRegistration;
 public class Initializer implements WebApplicationInitializer {
     private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
 
+    // TODO use new spring annotations
+
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
